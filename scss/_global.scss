@@ -127,7 +127,10 @@ a {
 
 .get-consultation2 {
   padding: 40px 0;
-  background: #471224;
+  background: url(../img/main-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   .main-title {
     margin-bottom: 20px;
     font-size: 40px;
@@ -176,6 +179,7 @@ a {
       @include align-center;
       font-size: 14px;
       font-weight: 600;
+      border: 1px solid #fff;
       color: #471224;
       @media (max-width: 767px) {
         @include justify-between;
@@ -191,8 +195,21 @@ a {
         min-width: 32px;
         background: #471224;
         @include flex;
-        img {
+        transition: 0.3s;
+        svg {
           margin: auto;
+          transition: 0.3s;
+          fill: white;
+        }
+      }
+      &:hover {
+        background: #471224;
+        color: white;
+        .icon {
+          background: white;
+          svg {
+            fill: #471224;
+          }
         }
       }
     }
@@ -396,6 +413,13 @@ a {
     @media (max-width: 767px) {
       margin-top: 20px;
     }
+    .white-btn {
+      border: 1px solid #fff;
+      &:hover {
+        background: #471224;
+        color: #fff;
+      }
+    }
     .slider-navigation {
       @include flex;
       position: static;
@@ -474,7 +498,10 @@ a {
 }
 
 .main-slider-info {
-  margin: 15px 0;
+  margin: 90px 0 15px;
+  @media (max-width: 767px) {
+    margin-top: 20px;
+  }
   .info {
     padding: 40px 0 20px;
     background: url(../img/main-bg.png);
@@ -483,9 +510,12 @@ a {
     background-position: center center;
     .main-title {
       margin-bottom: 40px;
+      font-size: 40px;
+      margin-top: -85px;
       @media (max-width: 767px) {
         margin-bottom: 20px;
         font-size: 30px;
+        margin-top: 0;
       }
     }
 
@@ -535,6 +565,10 @@ a {
           }
         }
       }
+    }
+    .wrapper {
+      position: relative;
+      z-index: 0;
     }
   }
   > .wrapper {
@@ -601,6 +635,31 @@ a {
           }
         }
       }
+    }
+  }
+  .title-style {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 600px;
+    height: 56px;
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    color: #fff;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-align: right;
+    @include flex;
+    @include align-center;
+    padding-right: 40px;
+    justify-content: flex-end;
+    @media (max-width: 767px) {
+      display: none;
     }
   }
 }
@@ -713,6 +772,10 @@ a {
       font-weight: 600;
       line-height: normal;
       border: 1px solid #fff;
+      &:hover {
+        background: white;
+        color: #471224;
+      }
     }
   }
 }
@@ -742,7 +805,7 @@ a {
     max-width: 100%;
     max-height: 100%;
     @media (max-width: 767px) {
-      width: 80%;
+      display: none;
     }
   }
   @media (max-width: 767px) {
@@ -840,6 +903,24 @@ a {
     @include flex;
     @include justify-between;
     @include align-center;
+    position: relative;
+    z-index: 0;
+    .title-style {
+      position: absolute;
+      top: -69px;
+      left: 0;
+      z-index: 10;
+      width: 197px;
+      height: 51px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      @include flex;
+      img {
+        margin: auto;
+        width: 140px;
+      }
+    }
     @media (max-width: 1024px) {
       @include flex-wrap;
     }
@@ -847,7 +928,7 @@ a {
 }
 
 .advantages {
-  margin: 15px 0;
+  margin: 30px 0 15px;
 
   .advantages-items {
     display: grid;
@@ -887,9 +968,10 @@ a {
       border-radius: 20px;
       overflow: hidden;
       padding: 20px;
+      transition: 0.3s;
       @media (max-width: 767px) {
         margin-bottom: 20px;
-        height: 50vw;
+        height: 70vw;
       }
       img {
         width: 100%;
@@ -915,6 +997,9 @@ a {
             max-width: 50px;
           }
         }
+      }
+      &:hover {
+        transform: scale(1.03);
       }
     }
     .text-wrap {
@@ -943,9 +1028,10 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 40px 0 80px;
+  padding: 40px 0 100px;
   @media (max-width: 767px) {
-    padding: 30px 0;
+    padding: 30px 0 60px;
+    background-position: center left;
   }
   .wrapper {
     display: grid;
@@ -957,13 +1043,111 @@ a {
     @media (max-width: 767px) {
       display: block;
     }
+    .bottom-info {
+      margin-top: auto;
+      display: none;
+      @media (max-width: 767px) {
+        @include flex;
+        @include dir-col;
+        @include align-center;
+        @include justify-center;
+      }
+      .address {
+        @include flex;
+        @include align-center;
+        margin-bottom: 20px;
+        .icon {
+          margin-right: 10px;
+        }
+        p {
+          font-size: 16px;
+          color: #2f2f2f;
+        }
+      }
+      .buttons {
+        @include flex;
+        @media (max-width: 1024px) {
+          @include dir-col;
+        }
+        a {
+          margin-right: 15px;
+          border-radius: 50px;
+          padding: 4px;
+          padding-left: 14px;
+          font-size: 12px;
+          font-weight: 600;
+          color: #471224;
+          background: white;
+          border: 1px solid #471224;
+          @include flex;
+          @include align-center;
+          @include justify-between;
+          max-width: 170px;
+          width: 100%;
+
+          @media (max-width: 1024px) {
+            margin-bottom: 10px;
+            margin-right: 0;
+            align-self: flex-start;
+          }
+          &:hover {
+            background: #471224;
+            color: white;
+            .icon {
+              background: white;
+              svg {
+                fill: #471224;
+              }
+            }
+          }
+          &.green {
+            background: #471224;
+            color: white;
+            .icon {
+              svg {
+                fill: #471224;
+                width: 14px;
+              }
+            }
+            &:hover {
+              background: white;
+              color: #471224;
+              .icon {
+                background: #471224;
+                svg {
+                  fill: white;
+                }
+              }
+            }
+            .icon {
+              background: white;
+            }
+          }
+          .icon {
+            margin-left: 10px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #471224;
+            min-width: 26px;
+            @include flex;
+            transition: 0.3s;
+            svg {
+              margin: auto;
+              width: 14px;
+              transition: 0.3s;
+              fill: #e8eeec;
+            }
+          }
+        }
+      }
+    }
     .text-wrap {
       @include flex;
       @include dir-col;
       @media (max-width: 767px) {
         max-width: 270px;
         width: 100%;
-        margin: 0 auto;
       }
       .title {
         @include flex;
@@ -1010,71 +1194,9 @@ a {
         }
       }
       .bottom-info {
-        margin-top: auto;
+        display: block;
         @media (max-width: 767px) {
-          @include flex;
-          @include dir-col;
-          @include align-center;
-          @include justify-center;
-        }
-        .address {
-          @include flex;
-          @include align-center;
-          margin-bottom: 20px;
-          .icon {
-            margin-right: 10px;
-          }
-          p {
-            font-size: 16px;
-            color: #2f2f2f;
-          }
-        }
-        .buttons {
-          @include flex;
-          @media (max-width: 1024px) {
-            @include dir-col;
-          }
-          a {
-            margin-right: 15px;
-            border-radius: 50px;
-            padding: 4px;
-            padding-left: 14px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #471224;
-            background: white;
-            border: 1px solid #471224;
-            @include flex;
-            @include align-center;
-            @include justify-between;
-            max-width: 170px;
-            width: 100%;
-            @media (max-width: 1024px) {
-              margin-bottom: 10px;
-              margin-right: 0;
-              align-self: flex-start;
-            }
-            &.green {
-              background: #471224;
-              color: white;
-              .icon {
-                background: white;
-              }
-            }
-            .icon {
-              margin-left: 10px;
-              width: 26px;
-              height: 26px;
-              border-radius: 50%;
-              background: #471224;
-              min-width: 26px;
-              @include flex;
-              img {
-                margin: auto;
-                width: 14px;
-              }
-            }
-          }
+          display: none;
         }
       }
     }
